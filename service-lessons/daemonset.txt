@@ -1,0 +1,1 @@
+Daemonset kubernetes her bir node da kube-proxy'yi olusuturan objedir.
