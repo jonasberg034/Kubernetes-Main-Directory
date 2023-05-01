@@ -1,0 +1,3 @@
+kubectl create namespace clarus-namespace
+kubectl create deployment default-ns --image=nginx  # default namespace'te nginx imajindan default-ns adinda deployment olusturur.
+kubectl create deployment clarus-ns  --image=nginx -n=clarus-namespace  # clarus-namespace'te clarus-ns adinda bir deployment olusturur.  
