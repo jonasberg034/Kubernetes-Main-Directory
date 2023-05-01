@@ -1,5 +1,21 @@
+
 Daemonset kubernetes her bir node da kube-proxy'yi olusuturan objedir.
 Kube-proxy servisleri yoneten.
-Load balancer servis cloud provider olamdan calismaz.
-Cluster IP servis kapali olan bir servis. Database icin .
 
+Load balancer servis cloud provider olmadan calismaz.
+Cluster IP servis kapali olan bir servis. Mesela Database icin .
+Servis objesinde herhangi bir tip belirtmez isen default  olarak !!!!!Cluster IP gelir!!!!!
+Servis objesi Poda baglanir. 
+!!!! Service  #selector --> app:web-flask ile Pod # template --> metadata --> labels --> app:web-flask !!!!
+
+Restart policy: dokumentasyon container resatrat policy. 
+
+Always : Pod bir sebepten dolayi hata aldiginda restart yap.
+Onfailure: Hata olma durumunda. Bazen pod stop eder ama hata vermez. Bu durumda pod restart etmez Onfailure da.
+Never: hicbir zaman restart etmiyor.
+
+Image pull policy: 
+
+IfNotPresent : local e bak localde varsa pull etme yoksa pull et.
+Always: Her zaman pull et.
+Never: hicbir zaman pull etme
