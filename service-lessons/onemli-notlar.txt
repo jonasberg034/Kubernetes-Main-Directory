@@ -1,0 +1,5 @@
+Daemonset kubernetes her bir node da kube-proxy'yi olusuturan objedir.
+Kube-proxy servisleri yoneten.
+Load balancer servis cloud provider olamdan calismaz.
+Cluster IP servis kapali olan bir servis. Database icin .
+
