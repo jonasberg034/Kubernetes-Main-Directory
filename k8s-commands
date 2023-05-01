@@ -1,24 +1,33 @@
 kubectl get cluster-info
 kubectl explain pod veya kubectl api-resources | grep pod veya !grep deploy
+kubectl explain ds  # daemonset
 kubectl apply -f .
 kubectl apply -f deploy.yaml
 kubectl create -f deploy.yaml  # farkina bak!!!
 kubectl delete -f deploy.yaml
+kubectl delete <deploy-name>
+kubectl delete deploy -l app=container-info
 kubectl get no,po,svc,ns,deploy
 kubectl get pods -o wide
 kubectl get pods <<pods-name>> -o yml
 kubectl get pods -l env=dev  # environmet label'indaki dev tag'i atanmis podlari gosterir.
 watch kubectl get po
+
 kubectl describe pods <<pods-name>>
 kubectl logs <<pods-name>> - c <<container-name>>  # container-name'i suradan bulabilirsin: template --> spec --> containers --> name:web-flask-pod 
 kubectl exec <<pods-name>> -- date
 kubectl exec -it <<pods-name>> -- bash  #pod'a baglanmak icin
+kubectl exec <pod-name> -- cat /usr/share/nginx/html/index.html
 kubectl scale deployment <<deployment-name>> --replicas=5
 kubectl rollout history deployment <<deployment-name>>
 kubectl set image deploy <<deployment-name>> container-info=clarusway/container-info 2.0
-
-
+kubectl rollout history deploy clarus-deploy --revision=1
+kubectl edit deploy/clarus-deploy  # kodu editleyebiliyoruz
 
 kubectl create namespace clarus-namespace
 kubectl create deployment default-ns --image=nginx  # default namespace'te nginx imajindan default-ns adinda deployment olusturur.
 kubectl create deployment clarus-ns  --image=nginx -n=clarus-namespace  # clarus-namespace'te clarus-ns adinda bir deployment olusturur.  
+kubectl get deploy -n clarus-namespace  # clarus-namespace'teki deploymentlari getirir
+kubectl get deploy --all-namespaces
+
+kubectl exec -it forcurl -- sh  ---> ping <pods-IP adddress> veya curl <pods-IP address:5000> 
