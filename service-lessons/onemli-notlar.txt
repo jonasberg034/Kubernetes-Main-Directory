@@ -7,6 +7,8 @@ Cluster IP servis kapali olan bir servis. Mesela Database icin .
 Servis objesinde herhangi bir tip belirtmez isen default  olarak !!!!!Cluster IP gelir!!!!!
 Servis objesi Poda baglanir. 
 !!!! Service  #selector --> app:web-flask ile Pod # template --> metadata --> labels --> app:web-flask !!!!
+Service olusturdugumuz zaman servis ayri bir endpoin oludutuur. Servise bagli endpoint adresleri tutuyor. Podlarin ip adreslerini iletiyor.
+
 
 Restart policy: dokumentasyon container resatrat policy. 
 
