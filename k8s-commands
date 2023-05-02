@@ -11,9 +11,10 @@ kubectl get no,po,svc,ns,deploy
 kubectl get pods -o wide
 kubectl get pods <<pods-name>> -o yml
 kubectl get pods -l env=dev  # environmet label'indaki dev tag'i atanmis podlari gosterir.
-watch kubectl get po
+watch kubectl get pods
 
 kubectl describe pods <<pods-name>>
+kubectl describe serivce <service-name>
 kubectl logs <<pods-name>> - c <<container-name>>  # container-name'i suradan bulabilirsin: template --> spec --> containers --> name:web-flask-pod 
 kubectl exec <<pods-name>> -- date
 kubectl exec -it <<pods-name>> -- bash  #pod'a baglanmak icin
@@ -30,4 +31,5 @@ kubectl create deployment clarus-ns  --image=nginx -n=clarus-namespace  # clarus
 kubectl get deploy -n clarus-namespace  # clarus-namespace'teki deploymentlari getirir
 kubectl get deploy --all-namespaces
 
-kubectl exec -it forcurl -- sh  ---> ping <pods-IP adddress> veya curl <pods-IP address:5000> 
+kubectl exec -it forcurl -- sh  ---> ping <pods-IP adddress> veya curl <pods-IP address:5000> # Bundan once forcurl adinda bir forcurl adinda yml dosyasi apply ettik. 
+curl komutu ile cesitli bilgiler elde edebiliyoruz.
