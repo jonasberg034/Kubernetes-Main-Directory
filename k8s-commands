@@ -11,6 +11,7 @@ kubectl get no,po,svc,ns,deploy
 kubectl get pods -o wide
 kubectl get pods <<pods-name>> -o yml
 kubectl get pods -l env=dev  # environmet label'indaki dev tag'i atanmis podlari gosterir.
+kubectl get endpoints
 watch kubectl get pods
 
 kubectl describe pods <<pods-name>>
