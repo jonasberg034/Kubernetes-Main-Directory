@@ -39,3 +39,9 @@ curl komutu ile cesitli bilgiler elde edebiliyoruz.
 
 kubectl config use-context "context-name"
 kubectl get serviceaccount  # (sa) kisaltmasi
+kubectl proxy --port=8080 &
+curl localhost:8080/metrics
+curl localhost:8080/api
+curl localhost:8080/apis/apps/v1 | grep deployment
+k api-resources | grep deployment
+
