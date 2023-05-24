@@ -14,6 +14,7 @@ kubectl get pods <<pods-name>> -o yml
 kubectl get pods -l env=dev  # environmet label'indaki dev tag'i atanmis podlari gosterir.
 kubectl get endpoints
 watch kubectl get pods
+kubectl run mypod --image=clarusway/kubectl
 
 kubectl describe pods <<pods-name>>
 kubectl describe serivce <service-name>
@@ -37,4 +38,4 @@ kubectl exec -it forcurl -- sh  ---> ping <pods-IP adddress> veya curl <pods-IP 
 curl komutu ile cesitli bilgiler elde edebiliyoruz.
 
 kubectl config use-context "context-name"
-kubectl get serviceaccount
+kubectl get serviceaccount  # (sa) kisaltmasi
