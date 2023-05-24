@@ -1,3 +1,4 @@
+alias k=kubectl
 kubectl get cluster-info
 kubectl explain pod veya kubectl api-resources | grep pod veya !grep deploy
 kubectl explain ds  # daemonset
@@ -34,3 +35,6 @@ kubectl get deploy --all-namespaces
 
 kubectl exec -it forcurl -- sh  ---> ping <pods-IP adddress> veya curl <pods-IP address:5000> # Bundan once forcurl adinda bir forcurl adinda yml dosyasi apply ettik. 
 curl komutu ile cesitli bilgiler elde edebiliyoruz.
+
+kubectl config use-context "context-name"
+kubectl get serviceaccount
